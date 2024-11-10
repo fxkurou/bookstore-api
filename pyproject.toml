@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "bookstore-api"
+version = "0.1.0"
+description = ""
+authors = ["Little-Wretch <nazarr914@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1.2"
+djangorestframework = "^3.15.2"
+python-dotenv = "^1.0.1"
+pre-commit = "^4.0.1"
+psycopg2-binary = "^2.9.10"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.7.2"
+bandit = "^1.7.10"
+coverage = "^7.6.4"
+commitizen = "^3.30.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
