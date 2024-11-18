@@ -9,14 +9,14 @@ REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
 REDIS_DB = os.getenv("REDIS_DB", 1)
 REDIS_PASSWORD = os.getenv("REDIS_PASSWORD", None)
 
-if all([REDIS_PORT, REDIS_HOST, REDIS_DB, REDIS_PASSWORD]):
+if all([REDIS_PORT, REDIS_HOST, REDIS_DB]):
     CACHES = {
         "default": {
             "BACKEND": "django_redis.cache.RedisCache",
             "LOCATION": f"redis://{REDIS_HOST}:{REDIS_PORT}/{REDIS_DB}",
             "OPTIONS": {
                 "CLIENT_CLASS": "django_redis.client.DefaultClient",
-                "PASSWORD": REDIS_PASSWORD,
+                # "PASSWORD": REDIS_PASSWORD,
             },
         },
     }
